@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Resource extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'resource_name','resource_description','resource_file'
+    ];
+
+    public function chapter() {
+        return $this->belongsTo(Chapter::class);
+    }
 }

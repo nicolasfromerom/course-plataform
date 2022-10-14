@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Note extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'notes'
+    ];
+
+    public function chapter() {
+        return $this->belongsTo(Chapter::class);
+    }
+
 }
