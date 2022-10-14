@@ -13,11 +13,13 @@ class Answer extends Model
         'comment'
     ];
 
+    protected $with = ['user'];
+
     public function comment() {
         return $this->belongsTo(Comment::class);
     }
 
-    public function author() {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 }

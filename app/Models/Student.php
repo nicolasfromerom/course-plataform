@@ -13,7 +13,7 @@ class Student extends Model
         'level'
     ];
 
-    public function chapter() {
+    public function chapters() {
         return $this->belongsToMany(Chapter::class, 'student_chapter');
     }
 

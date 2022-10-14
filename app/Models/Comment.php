@@ -13,6 +13,8 @@ class Comment extends Model
         'comment'
     ];
 
+    protected $with = ['answer', 'user'];
+
     public function chapter() {
         return $this->belongsTo(Chapter::class);
     }
@@ -21,7 +23,7 @@ class Comment extends Model
         return $this->hasMany(Answer::class);
     }
 
-    public function author() {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 }

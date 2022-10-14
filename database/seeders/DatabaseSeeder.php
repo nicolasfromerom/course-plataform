@@ -79,6 +79,18 @@ class DatabaseSeeder extends Seeder
             'level' => 'Basic',
         ]);
 
+        \App\Models\Comment::factory()->create([
+            'comment'=> 'Cool staff tutor',
+            'chapter_id' => 1,
+            'user_id' => 2
+        ]);
+
+        \App\Models\Answer::factory()->create([
+            'comment'=> 'Cool staff tutor',
+            'comment_id' => 1,
+            'user_id' => 2
+        ]);
+
         DB::table('student_course')->insert([
             'student_id' => 1,
             'course_id' => 1,

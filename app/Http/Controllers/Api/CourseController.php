@@ -15,7 +15,14 @@ class CourseController extends Controller
      */
     public function index()
     {
-        //
+        $course = Course::paginate();
+        return $course;
+    }
+
+    public function instructor($course)
+    {
+        $instructor = Course::findOrFail($course)->instructor()->first();
+        return $instructor;
     }
 
     /**
@@ -26,7 +33,7 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**

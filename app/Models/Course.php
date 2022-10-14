@@ -13,6 +13,8 @@ class Course extends Model
         'name'
     ];
 
+    protected $with = ['subCategory.category'];
+
     public function subCategory() {
         return $this->belongsTo(SubCategory::class);
     }
